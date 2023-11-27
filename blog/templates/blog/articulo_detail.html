@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load markdown_extras %}
 
 <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
   <main class="container">
@@ -8,7 +8,7 @@
           <div class="d-flex justify-content-between">
             <h1>{{ articulo.titulo }}</h1>
             <div class="align-self-end">
-              Publicado: {{ articulo.fecha.date }}
+              Publicado: {{ articulo.pub_date.date }}
             </div>
           </div>
         </div>
@@ -19,7 +19,7 @@
         </div>
         {% endif %}
 
-        <p>{{ articulo.cuerpo }}</p>
+        <p>{{ articulo.cuerpo | markdown | safe }}</p>
       </div>
     </div>
   </main>

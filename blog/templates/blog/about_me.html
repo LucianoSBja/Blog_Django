@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+  <main class="container">
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h3 class="pb-4 mb-4 fst-italic border-bottom">Acerca de mí</h3>
+        <p>
+          Hola, soy Luciano, el creador de este sitio. Soy un apasionado/a en la
+          programacion y quiero seguir creciendo en este mundo nuevo. En este
+          espacio, comparto artículos sobre mi blog de gatos y espero que
+          encuentres contenido interesante y útil.
+        </p>
+        <p>
+          No dudes en explorar los artículos y compartir tus pensamientos.
+          ¡Gracias por visitar!
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img
+          src="{% static 'images/foto01.jpg' %} "
+          alt="Foto del creador/a"
+          class="img-fluid rounded-circle"
+          style="width: 450px; height: 480px"
+        />
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

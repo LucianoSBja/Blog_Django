@@ -8,6 +8,8 @@ django = "*"
 requests = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
+django-ckeditor = "*"
+markdown = "*"
 
 [dev-packages]
 

@@ -19,12 +19,11 @@
               {{ article.titulo }}
             </a>
           </h2>
-          <p class="blog-post-meta">
-            {{ article.fecha.date }}. {{article.autor}}
-          </p>
-
-          <hr />
           <p>{{ article.overview }}</p>
+          <p class="blog-post-meta">
+            {{ article.pub_date.date }}. {{article.autor}}
+          </p>
+          <hr />
         </article>
         {% endfor %}
       </div>

@@ -1,16 +1,23 @@
 from typing import Any
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.views import generic
+from django.utils import timezone
+from django.db.models import Q
 
 from blog.models import Articulo, Category
+
+
 # Create your views here.
 
 
 def home_page(request):
-    articulos = Articulo.objects.all()
+    articulos = Articulo.objects.filter(
+        pub_date__lte=timezone.now()
+    )
     categories = Category.objects.all()
-    featured = Articulo.objects.filter(featured=True)[:3]
+    featured = Articulo.objects.filter(featured=True).filter(
+        pub_date__lte=timezone.now()
+    )[:3]
     
     context = {
         'articulos': articulos,
@@ -24,8 +31,21 @@ def home_page(request):
 
 class ArticleDetailView(generic.DetailView):
     model = Articulo
+    queryset = Articulo.objects.filter(
+        pub_date__lte=timezone.now()
+    )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
-        return context 
+        return context
+
+
+class AboutMeView(generic.TemplateView):
+    template_name = 'blog/about_me.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
+
