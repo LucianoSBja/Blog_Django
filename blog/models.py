@@ -18,7 +18,9 @@ class Articulo(models.Model):
 
     def get_absolute_url(self):
         return reverse("blog:article", kwargs={"slug": self.slug})
-    
+
+    class Meta:
+        ordering = ["-fecha"]
 
     def __str__(self):
         return self.titulo
