@@ -4,7 +4,7 @@ Curso de Coderhouse - Proyecto Final de Python con Django
 
 ---
 
-### Recomendaciones
+### Recomendaciones para iniciar proyecto
 
 1. Crear un entrono virtual.
 2. Clonar el repositorio
@@ -15,3 +15,9 @@ Curso de Coderhouse - Proyecto Final de Python con Django
 7. **Excelsior!**
 
 Visite [Pipenv](https://docs.python-guide.org/dev/virtualenvs/ "Pipenv y Entornos Virtuales") para crear un entorno virtual.
+
+<br/>
+
+### Inicio en modo admin
+1. Nombre de usuario: "admin"
+2. Contraseña: "1234"
